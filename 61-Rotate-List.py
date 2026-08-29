@@ -10,8 +10,8 @@ class Solution:
         tail=head
         n=1
         while tail.next:
-            n+=1
             tail=tail.next
+            n+=1
         k%=n
         if k==0:
             return head
