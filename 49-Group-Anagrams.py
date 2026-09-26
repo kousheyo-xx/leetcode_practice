@@ -1,13 +1,15 @@
 class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        anagrams={}
+    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
+        groups={}
         res=[]
-        for word in strs:
-            key="".join(sorted(word))
-            if key in anagrams:
-                anagrams[key].append(word)
+        n=len(strs)
+        for i in range(n):
+            word="".join(sorted(strs[i]))
+            if word in groups:
+                groups[word].append(strs[i])
             else:
-                anagrams[key]=[word]
-        for word in anagrams:
-            res.append(anagrams[word])
+                groups[word]=[strs[i]]
+        for word in groups:
+            res.append(groups[word])
         return res
+        
