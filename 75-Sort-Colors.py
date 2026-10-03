@@ -3,11 +3,10 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        n=len(nums)
-        i,j,k=0,0,n-1
+        i,j,k=0,0,len(nums)-1
         while j<=k:
             if nums[j]==0:
-                nums[j],nums[i]=nums[i],nums[j]
+                nums[i],nums[j]=nums[j],nums[i]
                 i+=1
                 j+=1
             elif nums[j]==1:
