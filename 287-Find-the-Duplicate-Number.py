@@ -1,6 +1,5 @@
 class Solution:
-    def findDuplicate(self, nums: List[int]) -> int:
-        n=len(nums)
+    def findDuplicate(self, nums: list[int]) -> int:
         slow=0
         fast=0
         while True:
