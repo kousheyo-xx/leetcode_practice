@@ -5,5 +5,5 @@ class Solution:
         maxSum=currSum
         for i in range(k,n):
             currSum+=nums[i]-nums[i-k]
-            maxSum=max(maxSum,currSum)
+            maxSum=max(currSum,maxSum)
         return maxSum/k
