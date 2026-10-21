@@ -1,9 +1,9 @@
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
-        preSum={0:1}
         n=len(nums)
-        currSum=0
+        preSum={0:1}
         count=0
+        currSum=0
         for i in range(n):
             currSum+=nums[i]
             if currSum-k in preSum:
