@@ -1,16 +1,11 @@
 class Solution:
-    def productExceptSelf(self, nums: List[int]) -> List[int]:
+    def productExceptSelf(self, nums: list[int]) -> list[int]:
         n=len(nums)
-        preArray=[1]*n
-        prefix=1
-        for i in range(n):
-            preArray[i]=prefix
-            prefix*=nums[i]
+        preSum=[1]*n
+        for i in range(1,n):
+            preSum[i]=preSum[i-1]*nums[i-1]
         suffix=1
         for i in range(n-1,-1,-1):
-            preArray[i]*=suffix
-            suffix=suffix*nums[i]
-        return preArray
-
-
-
+            preSum[i]*=suffix
+            suffix*=nums[i]
+        return preSum
