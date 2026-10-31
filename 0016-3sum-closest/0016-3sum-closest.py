@@ -9,11 +9,12 @@ class Solution:
             j=i+1
             k=n-1
             while j<k:
-                if nums[i]+nums[j]+nums[k]==target:
-                    return target
-                if abs(target-(nums[i]+nums[j]+nums[k]))<abs(target-bestSum):
-                    bestSum=nums[i]+nums[j]+nums[k]
-                if nums[i]+nums[j]+nums[k]<target:
+                currSum=nums[i]+nums[j]+nums[k]
+                if currSum==target:
+                    return currSum
+                if abs(currSum-target)<abs(bestSum-target):
+                    bestSum=currSum
+                if currSum<target:
                     j+=1
                 else:
                     k-=1
