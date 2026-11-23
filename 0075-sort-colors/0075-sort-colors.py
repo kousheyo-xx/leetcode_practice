@@ -14,4 +14,3 @@ class Solution:
             else:
                 nums[j],nums[k]=nums[k],nums[j]
                 k-=1
-                
