@@ -5,5 +5,5 @@ class Solution:
         bestSum=currSum
         for i in range(k,n):
             currSum+=nums[i]-nums[i-k]
-            bestSum=max(bestSum,currSum)
+            bestSum=max(currSum,bestSum)
         return bestSum/k
