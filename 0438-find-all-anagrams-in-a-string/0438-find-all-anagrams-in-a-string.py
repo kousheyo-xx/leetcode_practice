@@ -1,10 +1,10 @@
 class Solution:
     def findAnagrams(self, s: str, p: str) -> list[int]:
-        lenP=len(p)
         lenS=len(s)
+        lenP=len(p)
+        if lenP>lenS:
+            return []
         res=[]
-        if lenS<lenP:
-            return res
         pMap={}
         for ch in p:
             pMap[ch]=pMap.get(ch,0)+1
