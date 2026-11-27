@@ -1,14 +1,14 @@
 class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
-        anagrams={}
+        grp={}
         for word in strs:
             key="".join(sorted(word))
-            if key in anagrams:
-                anagrams[key].append(word)
+            if key in grp:
+                grp[key].append(word)
             else:
-                anagrams[key]=[]
-                anagrams[key].append(word)
+                grp[key]=[]
+                grp[key].append(word)
         res=[]
-        for key in anagrams:
-            res.append(anagrams[key])
+        for key in grp:
+            res.append(grp[key])
         return res
