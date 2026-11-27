@@ -3,8 +3,8 @@ class Solution:
         seen=set(nums)
         n=len(nums)
         maxLen=0
-        for i in range(n):
-            num=seen[i]
+        for num in seen:
+            elm=num
             if num-1 not in seen:
                 currLen=0
                 while num in seen:
