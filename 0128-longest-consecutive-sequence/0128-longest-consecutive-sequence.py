@@ -5,10 +5,10 @@ class Solution:
         maxLen=0
         for num in seen:
             elm=num
-            if num-1 not in seen:
+            if elm-1 not in seen:
                 currLen=0
-                while num in seen:
+                while elm in seen:
                     currLen+=1
-                    num+=1
+                    elm+=1
                 maxLen=max(currLen,maxLen)
         return maxLen
