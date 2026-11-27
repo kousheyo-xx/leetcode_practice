@@ -12,7 +12,8 @@ class Solution:
                 k=j+1
                 l=n-1
                 while k<l:
-                    if nums[i]+nums[j]+nums[k]+nums[l]==target:
+                    currSum=nums[i]+nums[j]+nums[k]+nums[l]
+                    if currSum==target:
                         res.append([nums[i],nums[j],nums[k],nums[l]])
                         k+=1
                         l-=1
@@ -20,7 +21,7 @@ class Solution:
                             k+=1
                         while k<l and nums[l]==nums[l+1]:
                             l-=1
-                    elif nums[i]+nums[j]+nums[k]+nums[l]<target:
+                    elif currSum<target:
                         k+=1
                     else:
                         l-=1
