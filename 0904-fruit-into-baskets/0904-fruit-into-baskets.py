@@ -1,14 +1,14 @@
 class Solution:
     def totalFruit(self, fruits: list[int]) -> int:
         fruitMap={}
-        left=0
-        ans=0
         n=len(fruits)
+        ans=0
+        left=0
         for right in range(n):
             fruitMap[fruits[right]]=fruitMap.get(fruits[right],0)+1
             while len(fruitMap)>2:
                 fruitMap[fruits[left]]-=1
-                if (fruitMap[fruits[left]])==0:
+                if fruitMap[fruits[left]]==0:
                     del(fruitMap[fruits[left]])
                 left+=1
             ans=max(ans,right-left+1)
