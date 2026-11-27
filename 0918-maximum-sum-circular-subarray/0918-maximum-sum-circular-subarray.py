@@ -12,4 +12,4 @@ class Solution:
         if maxSum<0:
             return maxSum
         else:
-            return max(maxSum,total-minSum)
+            return max(total-minSum,maxSum)
