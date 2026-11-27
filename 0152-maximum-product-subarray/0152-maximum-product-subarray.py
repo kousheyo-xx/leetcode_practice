@@ -4,9 +4,9 @@ class Solution:
         minProd,maxProd=nums[0],nums[0]
         ans=nums[0]
         for i in range(1,n):
-            currMin=minProd
-            currMax=maxProd
-            minProd=min(nums[i],currMin*nums[i],currMax*nums[i])
-            maxProd=max(nums[i],currMax*nums[i],currMin*nums[i])
-            ans=max(maxProd,ans)
+            tempMin=minProd
+            tempMax=maxProd
+            minProd=min(nums[i],tempMin*nums[i],tempMax*nums[i])
+            maxProd=max(nums[i],tempMax*nums[i],tempMin*nums[i])
+            ans=max(ans,maxProd)
         return ans
