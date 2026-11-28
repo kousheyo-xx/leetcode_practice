@@ -5,11 +5,11 @@ class Solution:
         water=0
         while i<=j:
             if height[i]<height[j]:
-                leftMax=max(height[i],leftMax)
+                leftMax=max(leftMax,height[i])
                 water+=leftMax-height[i]
                 i+=1
             else:
-                rightMax=max(height[j],rightMax)
+                rightMax=max(rightMax,height[j])
                 water+=rightMax-height[j]
                 j-=1
         return water
