@@ -1,18 +1,18 @@
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
-        lenT=len(t)
         lenS=len(s)
+        lenT=len(t)
         if lenT>lenS:
             return ""
-        l,r=0,0
         ansLen=float('inf')
+        l,r=0,0
         tMap={}
         for ch in t:
             tMap[ch]=tMap.get(ch,0)+1
         need=len(tMap)
-        left=0
-        sMap={}
         have=0
+        sMap={}
+        left=0
         for right in range(lenS):
             sMap[s[right]]=sMap.get(s[right],0)+1
             if s[right] in tMap and sMap[s[right]]==tMap[s[right]]:
@@ -26,3 +26,4 @@ class Solution:
                 sMap[s[left]]-=1
                 left+=1
         return s[l:r+1] if ansLen!=float('inf') else ""
+
