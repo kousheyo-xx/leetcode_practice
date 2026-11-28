@@ -6,9 +6,9 @@ class Solution:
         currMin,currMax=nums[0],nums[0]
         for i in range(1,n):
             currMin=min(nums[i],currMin+nums[i])
+            minSum=min(minSum,currMin)
             currMax=max(nums[i],currMax+nums[i])
-            minSum=min(currMin,minSum)
-            maxSum=max(currMax,maxSum)
+            maxSum=max(maxSum,currMax)
         if maxSum<0:
             return maxSum
         else:
