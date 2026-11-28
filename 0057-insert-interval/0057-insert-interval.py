@@ -1,9 +1,8 @@
 class Solution:
     def insert(self, intervals: list[list[int]], newInterval: list[int]) -> list[list[int]]:
         i=0
-        intervals.sort()
-        n=len(intervals)
         res=[]
+        n=len(intervals)
         while i<n and intervals[i][1]<newInterval[0]:
             res.append(intervals[i])
             i+=1
